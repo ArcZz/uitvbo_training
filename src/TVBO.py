@@ -114,7 +114,7 @@ class TimeVaryingBOModel(TVBO_Base):
         observed_fx = train_y.clone()
 
         if self.learn_hyper_parameters:
-            fit_gpytorch_model(mll)
+            fit_gpytorch_model(mll, max_retries=0)
 
         iter_lengthscales.append(model.spatio_kernel.base_kernel.lengthscale.clone().detach().numpy())
 
@@ -226,7 +226,7 @@ class TimeVaryingBOModel(TVBO_Base):
             mll, model = self.initialize_model(train_x, train_y, current_time=t + 1,
                                                state_dict=model.state_dict())
             if self.learn_hyper_parameters:
-                fit_gpytorch_model(mll)
+                fit_gpytorch_model(mll, max_retries=0)
             iter_lengthscales.append(model.spatio_kernel.base_kernel.lengthscale.clone().detach().numpy())
 
             if self.verbose:

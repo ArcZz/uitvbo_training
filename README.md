@@ -19,7 +19,7 @@ The goal of this project is to:
 This follows the standard CPS replication workflow:
 **implement → verify → break**
 
-# 2. Key Idea (TL;DR)
+# Key Idea (TL;DR)
 
 Most time-varying BO methods:
 → *forget the past* → re-explore globally → unsafe
@@ -28,14 +28,12 @@ UI-TVBO:
 → *keeps mean, increases uncertainty*
 → re-explores locally
 → safer + more efficient
-
-
-# On Controller-Tuning with Time-Varying Bayesian Optimization
-This repository contains the code for the paper "On Controller-Tuning with Time-Varying Bayesian Optimization (2022)" accepted at the [61st IEEE Conference on Decision and Control](https://cdc2022.ieeecss.org/).
-
+ 
+# author paper 
 ![LQR_Regret_combined6](https://user-images.githubusercontent.com/49341051/158646082-e957109f-cd6a-4a43-8d78-6e9a373f4aab.png)
 
-We propose a novel model for time-varying Bayesian optimization called **UI-TVBO** which leverages the concept of *uncertainty injection*. UI-TVBO is especially suitable for non-stationary time-varying optimization problems such as controller-tuning. Motivated by the LQR controller-tuning problem, we further include convexity constraints on the GP to increase sample efficiency. The model is implemented using [GPyTorch](https://gpytorch.ai) and [BoTorch](https://botorch.org).
+
+a novel model for time-varying Bayesian optimization called **UI-TVBO** which leverages the concept of *uncertainty injection*. UI-TVBO is especially suitable for non-stationary time-varying optimization problems such as controller-tuning. Motivated by the LQR controller-tuning problem, we further include convexity constraints on the GP to increase sample efficiency. The model is implemented using [GPyTorch](https://gpytorch.ai) and [BoTorch](https://botorch.org).
 
 If you find our code or paper useful, please consider citing
 ```
