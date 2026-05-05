@@ -1,3 +1,35 @@
+# UI-TVBO Replication (CSC 591 CPS Project)
+
+This repository contains a replication and stress-testing study of:
+
+> Brunzema et al., *"On Controller Tuning with Time-Varying Bayesian Optimization"*, CDC 2022.
+
+---
+
+# Project Goal
+
+The goal of this project is to:
+
+- Reproduce the key claims of UI-TVBO:
+  - Lower cumulative regret
+  - Fewer unstable evaluations
+- Compare against baseline (TV-GP-UCB)
+- Stress-test the method to identify its limitations
+
+This follows the standard CPS replication workflow:
+**implement → verify → break**
+
+# 2. Key Idea (TL;DR)
+
+Most time-varying BO methods:
+→ *forget the past* → re-explore globally → unsafe
+
+UI-TVBO:
+→ *keeps mean, increases uncertainty*
+→ re-explores locally
+→ safer + more efficient
+
+
 # On Controller-Tuning with Time-Varying Bayesian Optimization
 This repository contains the code for the paper "On Controller-Tuning with Time-Varying Bayesian Optimization (2022)" accepted at the [61st IEEE Conference on Decision and Control](https://cdc2022.ieeecss.org/).
 
